@@ -6,6 +6,10 @@ interface ElementFilter {
   [key: string]: boolean
 }
 
+interface routeData {
+  [key: string]: number
+}
+
 interface PokemonBasic{
   id: number,
   name: string,
@@ -41,4 +45,4 @@ interface jsonData{
 }
 
 
-export {GenerationFilter, ElementFilter, PokemonBasic, jsonData}
+export {GenerationFilter, ElementFilter, PokemonBasic, jsonData, routeData}

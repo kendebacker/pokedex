@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 import { GetpokemonService } from '../services/getpokemon.service';
+import { PokemonBasic } from '../interfaces/interfaces';
 
 
 @Component({
@@ -8,9 +9,9 @@ import { GetpokemonService } from '../services/getpokemon.service';
   styleUrls: ['./pokelist.component.scss']
 })
 export class PokelistComponent {
-  constructor(private getPokemon: GetpokemonService){}
+  constructor(public getPokemon: GetpokemonService){}
 
-  show():void{
-    this.getPokemon.get()
+  ngOnInit(){
+    console.log(this.getPokemon.getPokemonBasic())
   }
 }

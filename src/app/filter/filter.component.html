@@ -1,4 +1,4 @@
-<p>filter works!</p>
+<button (click) ="goBack()">Back</button>
 <h2>Generations</h2>
 <button [ngClass]="generationFilter[gen] ? 'standard' : 'extra'" *ngFor="let gen of generations" (click)="updateGeneration(gen)"> Gen {{gen}}</button>
 <h2>Elements</h2>

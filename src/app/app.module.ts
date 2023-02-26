@@ -7,13 +7,17 @@ import { LandingComponent } from './landing/landing.component';
 import { PokelistComponent } from './pokelist/pokelist.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterComponent } from './filter/filter.component';
+import { PokebasicComponent } from './pokebasic/pokebasic.component';
+import { PokedetailsComponent } from './pokedetails/pokedetails.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     PokelistComponent,
-    FilterComponent
+    FilterComponent,
+    PokebasicComponent,
+    PokedetailsComponent
   ],
   imports: [
     BrowserModule,

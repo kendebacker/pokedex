@@ -25,24 +25,24 @@ export class FilterService {
   }
 
   elementFilter: ElementFilter ={
-    Normal: true,
-    Fighting: true, 
-    Flying: true,
-    Poison: true, 
-    Ground: true, 
-    Rock:true, 
-    Bug: true, 
-    Ghost:true, 
-    Steel: true, 
-    Fire: true, 
-    Water: true, 
-    Grass: true, 
-    Psychic:true, 
-    Electric: true, 
-    Ice: true, 
-    Dragon: true, 
-    Dark: true, 
-    Fairy:true, 
+    normal: true,
+    fighting: true, 
+    flying: true,
+    poison: true, 
+    ground: true, 
+    rock:true, 
+    bug: true, 
+    ghost:true, 
+    steel: true, 
+    fire: true, 
+    water: true, 
+    grass: true, 
+    psychic:true, 
+    electric: true, 
+    ice: true, 
+    dragon: true, 
+    dark: true, 
+    fairy:true, 
   }
 
   updateSortSetting(setting: string):string{
@@ -69,6 +69,7 @@ export class FilterService {
   }
 
   sortPokemon(list: PokemonBasic[]):PokemonBasic[]{
+    console.log(list)
     if(this.sortSetting === "ID"){
       return list.sort((a,b)=> a.id - b.id)
     }else if(this.sortSetting === "Generation"){

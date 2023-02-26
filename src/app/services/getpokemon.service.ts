@@ -46,9 +46,12 @@ export class GetpokemonService {
     return true
   }
 
-  get():PokemonBasic[]{
+  getPokemonBasic():PokemonBasic[]{
     const generationSettings = this.filterService.getGenerationSettings()
     const elementSettings = this.filterService.getElementSettings()
+    console.log(this.pokeList[0])
+    console.log(generationSettings[this.pokeList[0].generation])
+    console.log(elementSettings[this.pokeList[0].element])
     return this.filterService.sortPokemon(this.pokeList.filter(poke => elementSettings[poke.element])
     .filter(poke => generationSettings[poke.generation]))
   }
