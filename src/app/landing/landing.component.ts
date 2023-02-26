@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { GetpokemonService } from '../getpokemon.service';
+import { Component, AfterViewInit } from '@angular/core';
+import { GetpokemonService } from '../services/getpokemon.service';
 
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss']
 })
-export class LandingComponent implements OnInit{
+export class LandingComponent implements AfterViewInit{
 
 constructor( private pokeService:GetpokemonService){}
 
-ngOnInit(): void {
-  this.pokeService.init()
+pokemonLoaded: boolean = true
+
+ngAfterViewInit(): void {
+  this.pokemonLoaded = !this.pokeService.init()
 }
 
 }
