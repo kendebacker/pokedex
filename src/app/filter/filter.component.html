@@ -1,1 +1,9 @@
 <p>filter works!</p>
+<h2>Generations</h2>
+<button [ngClass]="generationFilter[gen] ? 'standard' : 'extra'" *ngFor="let gen of generations" (click)="updateGeneration(gen)"> Gen {{gen}}</button>
+<h2>Elements</h2>
+<button [ngClass]="elementFilter[el] ? 'standard' : 'extra'"  *ngFor="let el of elements" (click)="updateElement(el)">{{el}}</button>
+<h2>Sorting</h2>
+<button [ngClass]="sortSetting === sort ? 'standard' : 'extra'"  *ngFor="let sort of sortSettings" (click)="updateSort(sort)">{{sort}}</button>
+
+

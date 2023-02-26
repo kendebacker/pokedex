@@ -1,13 +1,6 @@
-import { Injectable } from '@angular/core';
-
-interface GenerationFilter{
-  [key: number]: boolean
-}
-
-interface ElementFilter {
-  [key: string]: boolean
-}
-
+import { Injectable, ValueProvider } from '@angular/core';
+import { GenerationFilter, ElementFilter } from '../interfaces/interfaces';
+import { PokemonBasic } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -52,17 +45,43 @@ export class FilterService {
     Fairy:true, 
   }
 
-  updateSortSetting(setting: string){
+  updateSortSetting(setting: string):string{
     this.sortSetting = setting
+    return setting
   }
 
-  updateGeneration(generation: number){
+  updateGeneration(generation: number):GenerationFilter{
     this.generationFilter[generation] = !this.generationFilter[generation]
+    return this.generationFilter
   }
 
-  updateElement(element: string){
+  updateElement(element: string):ElementFilter{
     this.elementFilter[element] = !this.elementFilter[element]
+    return this.elementFilter
   }
-  
+
+  getGenerationSettings():GenerationFilter{
+    return this.generationFilter
+  }
+
+  getElementSettings():ElementFilter{
+    return this.elementFilter
+  }
+
+  sortPokemon(list: PokemonBasic[]):PokemonBasic[]{
+    if(this.sortSetting === "ID"){
+      return list.sort((a,b)=> a.id - b.id)
+    }else if(this.sortSetting === "Generation"){
+      return list.sort((a,b)=> a.generation - b.generation)
+    }else if(this.sortSetting === "Weight"){
+      return list.sort((a,b)=> a.weight - b.weight)
+    }else if(this.sortSetting === "HP"){
+      return list.sort((a,b)=> a.hp - b.hp)
+    }else if(this.sortSetting === "Element"){
+      return list.sort((a,b)=> a.element.toLowerCase() < b.element.toLowerCase()?-1:a.element.toLowerCase() > b.element.toLowerCase()?1:0)
+    }else{
+      return list.sort((a,b)=> a.name.toLowerCase() < b.name.toLowerCase()?-1:a.name.toLowerCase() > b.name.toLowerCase()?1:0)
+    }
+  }
 
 }
