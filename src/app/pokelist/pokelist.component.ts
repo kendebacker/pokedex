@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { GetpokemonService } from '../getpokemon.service';
+import { GetpokemonService } from '../services/getpokemon.service';
+
 
 @Component({
   selector: 'app-pokelist',
@@ -10,6 +11,6 @@ export class PokelistComponent {
   constructor(private getPokemon: GetpokemonService){}
 
   show():void{
-    this.getPokemon.show()
+    this.getPokemon.get()
   }
 }

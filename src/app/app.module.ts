@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { PokelistComponent } from './pokelist/pokelist.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    PokelistComponent
+    PokelistComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
