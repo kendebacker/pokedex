@@ -1,0 +1,39 @@
+.wrapper-pokemon{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .innerWrapper-pokemon{
+        height: 93%;
+        width: 100%;
+        margin: 7px;
+        border-radius: 5px;
+        background-color: pink;
+        display: flex;
+        flex-direction: row;
+        overflow: scroll;
+
+
+        .poke-basic-img{
+            width: 35%;
+            aspect-ratio: 1/1;
+        }
+
+        .basic-wrapper1{
+            width: 50%;
+            height: 100%;
+
+            .pokeTitle{
+                margin: 0;
+            }
+        }
+
+        .basic-wrapper2{
+            width: 15%;
+            height: 100%;
+        }
+
+    }
+}

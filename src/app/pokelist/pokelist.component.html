@@ -1,8 +1,21 @@
-<p>pokelist works!</p>
-<button>Clkick</button>
-<a routerLink="/filter">
-    
-    Filter
-</a>
-<app-pokebasic [pokeData] ="poke" *ngFor="let poke of this.getPokemon.getPokemonBasic()"></app-pokebasic>
+<div class="header">
+    <a routerLink="/filter">
+        <div class="filterButton">
+            Filter
+        </div>
+    </a>
+    <div class="detailButton">
+        Generation
+    </div>
+    <div class="detailButton">
+        Types
+    </div>
+    <div class="detailButton">
+        Sorting
+    </div>
+</div>
+<div class="main">
+    <app-pokebasic [pokeData] ="poke" *ngFor="let poke of this.getPokemon.getPokemonBasic()"></app-pokebasic>
+</div>
+
 

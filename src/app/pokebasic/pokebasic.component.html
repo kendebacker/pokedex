@@ -1,8 +1,20 @@
-<p>{{pokeData.name}}</p>
-<p>{{pokeData.id}}</p>
-<p>{{pokeData.element}}</p>
-<p>{{pokeData.generation}}</p>
-<p>{{pokeData.hp}}</p>
-<p>{{pokeData.weight}}</p>
-<a [routerLink]="['/details',pokeData.id]" [state]="{ id:5}">View</a>
+
+<div class="wrapper-pokemon">
+    <div class="innerWrapper-pokemon">
+        <img class="poke-basic-img" src={{pokeData.imageMain}}>
+        <div class="basic-wrapper1">
+            <h2 class="pokeTitle">{{pokeData.name}}</h2>
+            <ul>
+                <li>ID: {{pokeData.id}}</li>
+                <li>Type: {{pokeData.element}}</li>
+                <li>Generation: {{pokeData.generation}}</li>
+                <li>HP: {{pokeData.hp}}</li>
+                <li>Weight: {{pokeData.weight}}</li>
+            </ul>
+        </div>
+        <div class="basic-wrapper2">
+            <a [routerLink]="['/details',pokeData.id]" [state]="{ id:5}">View</a>
+        </div>
+    </div>
+</div>
 
