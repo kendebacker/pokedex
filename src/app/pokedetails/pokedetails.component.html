@@ -1,1 +1,16 @@
-<p>pokedetails works!</p>
+<button (click)="goBack()">Babck</button>
+<img src={{data.images[0]}} alt="">
+<p>{{data.name}}</p>
+<p>{{data.id}}</p>
+<p>{{data.order}}</p>
+<p>{{data.weight}}</p>
+<p>{{data.height}}</p>
+<p>{{data.base_experience}}</p>
+<h2>Stats</h2>
+<p *ngFor="let stat of data.stats">{{stat.name}} {{stat.effort}} {{stat.stat}}</p>
+<h2>Abilities</h2>
+<p *ngFor="let abil of data.abilities">{{abil}}</p>
+<h2>Moves</h2>
+<p *ngFor="let move of data.moves">{{move}}</p>
+<h2>Elements</h2>
+<p *ngFor="let type of data.types">{{type}}</p>

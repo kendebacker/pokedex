@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'pokelist', component: PokelistComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'filter', component: FilterComponent },
-  { path: 'detail', component: PokedetailsComponent, data: {id: 1} },
+  { path: 'details/:id', component: PokedetailsComponent},
 ];
 
 @NgModule({

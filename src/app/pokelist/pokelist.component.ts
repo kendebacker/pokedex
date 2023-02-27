@@ -12,6 +12,6 @@ export class PokelistComponent {
   constructor(public getPokemon: GetpokemonService){}
 
   ngOnInit(){
-    console.log(this.getPokemon.getPokemonBasic())
+    this.getPokemon.getPokemonBasic()
   }
 }

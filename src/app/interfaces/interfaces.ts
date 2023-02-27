@@ -44,5 +44,55 @@ interface jsonData{
   }
 }
 
+interface jsonDataDetailed{
+  abilities:[
+    {ability:{name: string}}
+  ],
+  base_experience:number,
+  height: number,
+  id: number,
+  order: number,
+  weight: number,
+  name: string,
+  moves:[
+    {move: {name: string}}
+  ],
+  stats:[
+    {base_stat: number,
+    effort: number,
+  stat:{name: string}}
+  ],
+  types:[
+    {
+      slot: number,
+      type:{name:string}
+    }
+  ],
+  sprites: {
+    "other":{
+      "home":{
+        front_default: string
+      },
+      "official-artwork":{
+        front_default:string
+      }
+    }
+  }
+}
 
-export {GenerationFilter, ElementFilter, PokemonBasic, jsonData, routeData}
+interface pokemonDetailed{
+  abilities: string[],
+  base_experience: number,
+  height: number,
+  id: number,
+  order: number,
+  weight:  number,
+  name: string,
+  moves: string[],
+  stats: {stat: number, effort: number, name: string }[],
+  types: string[],
+  images: string[]
+}
+
+
+export {GenerationFilter, ElementFilter, PokemonBasic, jsonData, routeData, jsonDataDetailed, pokemonDetailed}

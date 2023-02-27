@@ -69,7 +69,7 @@ export class FilterService {
   }
 
   sortPokemon(list: PokemonBasic[]):PokemonBasic[]{
-    console.log(list)
+    console.log(list, this.sortSetting)
     if(this.sortSetting === "ID"){
       return list.sort((a,b)=> a.id - b.id)
     }else if(this.sortSetting === "Generation"){

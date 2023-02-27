@@ -4,5 +4,5 @@
 <p>{{pokeData.generation}}</p>
 <p>{{pokeData.hp}}</p>
 <p>{{pokeData.weight}}</p>
-<a routerLink="/details" [state]="{ id:pokeData.id}">View</a>
+<a [routerLink]="['/details',pokeData.id]" [state]="{ id:5}">View</a>
 
