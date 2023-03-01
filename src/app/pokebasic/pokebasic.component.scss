@@ -7,19 +7,15 @@
 }
 
 .innerWrapper-pokemon{
-    height: 93%;
-    width: 100%;
-    margin: 7px;
-    border-radius: 5px;
+    display: grid;
+    height: 95%;
+    width: 95%;
+    grid-template-rows: 1fr 4fr;
     background-color: pink;
-    display: flex;
-    flex-direction: column;
-    overflow: scroll;
+    border-radius: 5px;
 }
 
 .top-row{
-    
-    flex: .2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,10 +40,11 @@
 }
 
 .bottom-row{
-    flex: .8;
     flex-direction: row;
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .poke-basic-img{
@@ -64,6 +61,7 @@
     justify-content: start;
     width: 100%;
     height: 100%;
+    font-size: calc(12px + 1vw)
 }
      
 
