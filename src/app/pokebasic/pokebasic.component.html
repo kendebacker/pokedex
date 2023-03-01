@@ -1,19 +1,23 @@
 
 <div class="wrapper-pokemon">
     <div class="innerWrapper-pokemon">
-        <img class="poke-basic-img" src={{pokeData.imageMain}}>
-        <div class="basic-wrapper1">
+        <div class="top-row">
             <h2 class="pokeTitle">{{pokeData.name}}</h2>
-            <ul>
-                <li>ID: {{pokeData.id}}</li>
-                <li>Type: {{pokeData.element}}</li>
-                <li>Generation: {{pokeData.generation}}</li>
-                <li>HP: {{pokeData.hp}}</li>
-                <li>Weight: {{pokeData.weight}}</li>
-            </ul>
+            <div class="button-link">
+                <a [routerLink]="['/details',pokeData.id]" [state]="{ id:5}">View</a>
+            </div>
         </div>
-        <div class="basic-wrapper2">
-            <a [routerLink]="['/details',pokeData.id]" [state]="{ id:5}">View</a>
+        <div class="bottom-row">
+            <img class="poke-basic-img" src={{pokeData.imageMain}}>
+            <div class="basic-wrapper1">
+                <ul>
+                    <li>ID: {{pokeData.id}}</li>
+                    <li>Type: {{pokeData.element}}</li>
+                    <li>Generation: {{pokeData.generation}}</li>
+                    <li>HP: {{pokeData.hp}}</li>
+                    <li>Weight: {{pokeData.weight}}</li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

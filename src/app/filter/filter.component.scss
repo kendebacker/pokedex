@@ -1,7 +1,137 @@
-.standard{
-    background-color: blue;
+
+
+body{
+    margin: 0;
+    padding: 0;
 }
 
-.extra{
+app-filter{
+    margin:0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+}
+
+.row-1{
+    background-color: pink;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 2fr 3fr;
+}
+
+.header-gen{
+    flex: .3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2{
+        padding: 0;
+        margin: 5px;
+        font-size: 3vw;
+    }
+}
+
+.gen_button_row{
+    flex: .7;
     background-color: red;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.gen-button{
+    margin: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: burlywood;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span{
+        font-size: 3vw;
+    }
+}
+
+.row-2{
+    flex: .8;
+    display: flex;
+    flex-direction: row;
+    background-color: aquamarine;
+    align-items: center;
+    justify-content: center;
+}
+
+.type-column{
+    flex: .7;
+    background-color: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.other-column{
+    flex: .3;
+    display: flex;
+    flex-direction: column;
+}
+
+.sorting-type{
+    flex: .7
+}
+
+.return-button{
+    flex: .3
+}
+
+.header-type{
+    flex: .1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2{
+        padding: 0;
+        margin: 10px;
+        font-size: 3vw;
+    }
+}
+
+.type_button_row{
+    flex: .93;
+    flex-shrink: 0;
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.type-button{
+    padding: 10px;
+    width: 20%;
+    margin: 5px;
+    background-color: burlywood;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span{
+        font-size: 2vw;
+        margin: 0;
+        padding: 0;
+    }
+
+    img{
+        height: 10vh;
+        aspect-ratio: 1/1;
+        margin-left: 10px;
+        padding: 0
+    }
 }

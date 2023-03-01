@@ -1,50 +1,50 @@
 body{
     margin: 0;
     padding: 0;
+}
 
-    app-pokelist{
-        margin: 0;
-        padding: 0;
-        background-color: #CC0000;
-        color: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        flex: 1;
-        min-height: 100vh;
-        width: 100vw;
-        position: relative; 
+app-pokelist{
+    margin: 0;
+    padding: 0;
+    background-color: #CC0000;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100vh;
+    width: 100vw;
+    position: relative; 
+}
 
-        .header{
-            display: flex;
-            min-height: 20vh;
-            width: 100%;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-around;
+.header{
+    display: flex;
+    min-height: 20vh;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
 
-            .filterButton{
-                padding: 20px;
-                background-color: green;
-            }
+.filterButton{
+    padding: 20px;
+    background-color: green;
+}
 
-            .detailButton{
-                padding: 20px;
-                background-color: green;
-            }
-        }
+.detailButton{
+    padding: 20px;
+    background-color: green;
+}
         
-        .main{
-            width: 100%;
+.main{
+    width: 100%;
+}
 
-            app-pokebasic{
-                width: 33.3%;
-                height: 35vh;
-                display: inline-block;
+app-pokebasic{
+    width: 33.3%;
+    height: 35vh;
+    display: inline-block;
 
-            }
-        }
-    }
 }
 

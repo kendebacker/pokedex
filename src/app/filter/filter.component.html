@@ -1,9 +1,32 @@
-<button (click) ="goBack()">Back</button>
-<h2>Generations</h2>
-<button [ngClass]="generationFilter[gen] ? 'standard' : 'extra'" *ngFor="let gen of generations" (click)="updateGeneration(gen)"> Gen {{gen}}</button>
-<h2>Elements</h2>
-<button [ngClass]="elementFilter[el] ? 'standard' : 'extra'"  *ngFor="let el of elements" (click)="updateElement(el)">{{el}}</button>
-<h2>Sorting</h2>
-<button [ngClass]="sortSetting === sort ? 'standard' : 'extra'"  *ngFor="let sort of sortSettings" (click)="updateSort(sort)">{{sort}}</button>
-
+<div class="row-1">
+    <div class="header-gen">
+        <h2>generations</h2>
+    </div>
+    <div class="gen_button_row">
+        <button class="gen-button"  [ngClass]="generationFilter[gen] ? 'standard' : 'extra'" *ngFor="let gen of generations" (click)="updateGeneration(gen)"> 
+            <span>{{gen}}</span>
+        </button>
+    </div>
+</div>
+<div class="row-2">
+    <div class="type-column">
+        <div class="header-type">
+            <h2>generations</h2>
+        </div>
+        <div class="type_button_row">
+            <button class="type-button" [ngClass]="elementFilter[el] ? 'standard' : 'extra'"  *ngFor="let el of elements" (click)="updateElement(el)">
+                <span>{{el}}</span>
+                <img src={{elementMap[el]}} >
+            </button>
+        </div>
+    </div>
+    <div class="other-column">
+        <div class="sorting-type">
+            <button [ngClass]="sortSetting === sort ? 'standard' : 'extra'"  *ngFor="let sort of sortSettings" (click)="updateSort(sort)">{{sort}}</button>
+        </div>
+        <div class="return-button">
+            <button (click) ="goBack()">Back</button>
+        </div>
+    </div>
+</div>
 

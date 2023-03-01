@@ -94,5 +94,8 @@ interface pokemonDetailed{
   images: string[]
 }
 
+interface elementObject {
+  [normal: string]: string
+}
 
-export {GenerationFilter, ElementFilter, PokemonBasic, jsonData, routeData, jsonDataDetailed, pokemonDetailed}
+export {GenerationFilter, ElementFilter, PokemonBasic, jsonData, routeData, jsonDataDetailed, pokemonDetailed, elementObject}
