@@ -13,8 +13,26 @@
         <div class="header-type">
             <h2>generations</h2>
         </div>
-        <div class="type_button_row">
-            <button class="type-button" [ngClass]="elementFilter[el] ? 'standard' : 'extra'"  *ngFor="let el of elements" (click)="updateElement(el)">
+        <div class="type_button_row-a">
+            <button class="type-button" [ngClass]="elementFilter[el] ? 'standard' : 'extra'"  *ngFor="let el of elements.slice(0,4)" (click)="updateElement(el)">
+                <span>{{el}}</span>
+                <img src={{elementMap[el]}} >
+            </button>
+        </div>
+        <div class="type_button_row-b">
+            <button class="type-button" [ngClass]="elementFilter[el] ? 'standard' : 'extra'"  *ngFor="let el of elements.slice(4,9)" (click)="updateElement(el)">
+                <span>{{el}}</span>
+                <img src={{elementMap[el]}} >
+            </button>
+        </div>
+        <div class="type_button_row-a">
+            <button class="type-button" [ngClass]="elementFilter[el] ? 'standard' : 'extra'"  *ngFor="let el of elements.slice(9,13)" (click)="updateElement(el)">
+                <span>{{el}}</span>
+                <img src={{elementMap[el]}} >
+            </button>
+        </div>
+        <div class="type_button_row-b">
+            <button class="type-button" [ngClass]="elementFilter[el] ? 'standard' : 'extra'"  *ngFor="let el of elements.slice(13,18)" (click)="updateElement(el)">
                 <span>{{el}}</span>
                 <img src={{elementMap[el]}} >
             </button>
