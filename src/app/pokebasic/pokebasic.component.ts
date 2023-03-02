@@ -8,8 +8,10 @@ import { PokemonBasic } from '../interfaces/interfaces';
 })
 export class PokebasicComponent{
 
-@Input() pokeData!: PokemonBasic;
+@Input() pokeData!: PokemonBasic; 
+@Input() imageOption!:boolean;
 @Output() selectPokemon = new EventEmitter<number>()
+
 
 goDetailView(id: number) {
   this.selectPokemon.emit(id);
