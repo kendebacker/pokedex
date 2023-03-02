@@ -5,18 +5,26 @@ body{
     padding: 0;
 }
 
-app-filter{
-    margin:0;
-    padding: 0;
+.header{
+    padding: 0px 20px 0px 20px;
+    display: flex;
+    justify-content: start;
+}
+
+.main-div{
     min-height: 100vh;
     display: grid;
     grid-template-rows: 2fr 8fr;
-    padding: .5% .5% .5% .5%;
+    padding: 0% .5% .5% .5%;
     box-sizing: border-box;
 }
 
+app-filter{
+    margin:0;
+    padding: 0;
+}
+
 .row-1{
-    background-color: red;
     height: 100%;
     width: 100%;
     display: grid;
@@ -24,7 +32,6 @@ app-filter{
 }
 
 .gen_button_row{
-    background-color: red;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -32,9 +39,7 @@ app-filter{
 
 .gen-button{
     margin: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: burlywood;
+    height: 92% !important;
     flex: 1;
     display: flex;
     align-items: center;
@@ -47,7 +52,6 @@ app-filter{
 
 .row-2{
     display: grid;
-    background-color: aquamarine;
     grid-template-columns: 3fr 1fr;
     column-gap: 2%;
 }
@@ -79,26 +83,30 @@ app-filter{
 }
 
 .type_button_row-a{
-    background-color: red;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .type_button_row-b{
-    background-color: red;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .type-button{
     width: 95%;
-    height: 92%;
+    height: 92% !important;
     margin: 5px;
-    background-color: burlywood;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+    .inner-button{
+        width: 100%;
+        height: 100%;
+        flex: 1;
+        display: flex ;
+        flex-direction: column;
+        align-items: center ;
+        justify-content: center ;
+
+    }
 
     span{
         font-size: calc(1.5vw + 12px);
@@ -107,9 +115,10 @@ app-filter{
     }
 
     img{
-        height: 10vh;
+
+        height: 7vh;
         aspect-ratio: 1/1;
-        margin-left: 10px;
+        margin-top: 10px;
     }
 }
 
@@ -119,7 +128,6 @@ app-filter{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: blue;
 
     button{
         width: 90%;

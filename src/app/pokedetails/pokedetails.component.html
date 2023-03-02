@@ -3,20 +3,21 @@
     <img src={{data.images[0]}} alt="">
     <h2>{{data.name}}</h2>
 </div>
-<div class="column">
-    <p>{{data.id}}</p>
-    <p>{{data.order}}</p>
-    <p>{{data.weight}}</p>
-    <p>{{data.height}}</p>
-    <p>{{data.base_experience}}</p>
-    <h2>Elements</h2>
-    <p *ngFor="let type of data.types">{{type}}</p>
-    <h2>Stats</h2>
-    <p *ngFor="let stat of data.stats">{{stat.name}} {{stat.effort}} {{stat.stat}}</p>
+<div class="column" id="basic-col">
+    <h2>Basic Information</h2>
+    <span>Pokemon ID:  <strong>{{data.id}}</strong></span>
+    <span>Evolution Order: <strong>{{data.order}}</strong></span>
+    <span>Weight: <strong>{{data.weight}}</strong></span>
+    <span>Height: <strong>{{data.height}}</strong></span>
+    <span>Base Experience: <strong>{{data.base_experience}}</strong></span>
+    <h2>Element Type</h2>
+    <span *ngFor="let type of data.types">{{type}}</span>
+    <h2>Statistics</h2>
+    <span *ngFor="let stat of data.stats">{{stat.name}}: <strong>{{stat.stat}}</strong></span>
     <h2>Abilities</h2>
-    <p *ngFor="let abil of data.abilities">{{abil}}</p>
+    <span *ngFor="let abil of data.abilities">{{abil}}</span>
 </div>
-<div class="column">
+<div class="column" id="moves-col">
     <h2>Moves</h2>
-    <p *ngFor="let move of data.moves">{{move}}</p> 
+    <span *ngFor="let move of data.moves">{{move}}</span> 
 </div>

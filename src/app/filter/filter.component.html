@@ -1,58 +1,63 @@
-<div class="row-1">
-    <div class="header-type">
-        <h2>Generations</h2>
-    </div>
-    <div class="gen_button_row">
-        <button class="gen-button"  [ngClass]="generationFilter[gen] ? 'standard' : 'extra'" *ngFor="let gen of generations" (click)="updateGeneration(gen)"> 
-            <span>{{gen}}</span>
-        </button>
-    </div>
-</div>
-<div class="row-2">
-    <div class="type-column">
+<mat-toolbar color="primary" class="header">
+    <button (click) ="goBack()">Back</button>
+</mat-toolbar>
+<div class="main-div">
+    <div class="row-1">
         <div class="header-type">
-            <h2>Element Type</h2>
+            <h2>Generations</h2>
         </div>
-        <div class="type_button_row-a">
-            <button class="type-button" [ngClass]="elementFilter[el] ? 'standard' : 'extra'"  *ngFor="let el of elements.slice(0,4)" (click)="updateElement(el)">
-                <span>{{el}}</span>
-                <img src={{elementMap[el]}} >
-            </button>
-        </div>
-        <div class="type_button_row-b">
-            <button class="type-button" [ngClass]="elementFilter[el] ? 'standard' : 'extra'"  *ngFor="let el of elements.slice(4,9)" (click)="updateElement(el)">
-                <span>{{el}}</span>
-                <img src={{elementMap[el]}} >
-            </button>
-        </div>
-        <div class="type_button_row-a">
-            <button class="type-button" [ngClass]="elementFilter[el] ? 'standard' : 'extra'"  *ngFor="let el of elements.slice(9,13)" (click)="updateElement(el)">
-                <span>{{el}}</span>
-                <img src={{elementMap[el]}} >
-            </button>
-        </div>
-        <div class="type_button_row-b">
-            <button class="type-button" [ngClass]="elementFilter[el] ? 'standard' : 'extra'"  *ngFor="let el of elements.slice(13,18)" (click)="updateElement(el)">
-                <span>{{el}}</span>
-                <img src={{elementMap[el]}} >
+        <div class="gen_button_row">
+            <button mat-raised-button class="gen-button"  [color]="generationFilter[gen] ? 'primary' : 'basic'" *ngFor="let gen of generations" (click)="updateGeneration(gen)"> 
+                <span>{{gen}}</span>
             </button>
         </div>
     </div>
-    <div class="other-column">
-        <div class="sorting-type">
+    <div class="row-2">
+        <div class="type-column">
             <div class="header-type">
-                <h2>Sorting</h2>
+                <h2>Element Type</h2>
             </div>
-            <div *ngFor="let sort of sortSettings" class="button-row-sort">
-                <button class="button-sort"  [ngClass]="sortSetting === sort ? 'standard' : 'extra'"  (click)="updateSort(sort)">{{sort}}</button>
+            <div class="type_button_row-a">
+                <button mat-raised-button class="type-button" [color]="elementFilter[el] ? 'primary' : 'basic'"  *ngFor="let el of elements.slice(0,4)" (click)="updateElement(el)">
+                    <span class="inner-button">
+                        <span>{{el}}</span>
+                        <img src={{elementMap[el]}} >
+                    </span>
+                </button>
+            </div>
+            <div class="type_button_row-b">
+                <button mat-raised-button class="type-button" [color]="elementFilter[el] ? 'primary' : 'basic'"  *ngFor="let el of elements.slice(4,9)" (click)="updateElement(el)">
+                    <span class="inner-button">
+                        <span>{{el}}</span>
+                        <img src={{elementMap[el]}} >
+                    </span>
+                </button>
+            </div>
+            <div class="type_button_row-a">
+                <button mat-raised-button class="type-button" [color]="elementFilter[el] ? 'primary' : 'basic'"   *ngFor="let el of elements.slice(9,13)" (click)="updateElement(el)">
+                    <span class="inner-button">
+                        <span>{{el}}</span>
+                        <img src={{elementMap[el]}} >
+                    </span>
+                </button>
+            </div>
+            <div class="type_button_row-b">
+                <button mat-raised-button class="type-button" [color]="elementFilter[el] ? 'primary' : 'basic'"  *ngFor="let el of elements.slice(13,18)" (click)="updateElement(el)">
+                    <span class="inner-button">
+                        <span>{{el}}</span>
+                        <img src={{elementMap[el]}} >
+                    </span>
+                </button>
             </div>
         </div>
-        <div class="return-area">
-            <div class="header-type">
-                <h2>Back</h2>
-            </div>
-            <div class="return-button">
-                <button (click) ="goBack()">Back</button>
+        <div class="other-column">
+            <div class="sorting-type">
+                <div class="header-type">
+                    <h2>Sorting</h2>
+                </div>
+                <div *ngFor="let sort of sortSettings" class="button-row-sort">
+                    <button mat-raised-button class="button-sort"  [ngClass]="sortSetting === sort ? 'standard' : 'extra'"  (click)="updateSort(sort)">{{sort}}</button>
+                </div>
             </div>
         </div>
     </div>

@@ -1,6 +1,6 @@
 app-pokedetails{
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr .75fr;
 }
 
 .column{
@@ -9,11 +9,29 @@ app-pokedetails{
     align-items: start;
     height: 100vh;
     overflow: scroll;
+    font-size: calc(12px + .7vw);
+    
+    span{
+        margin-top: 3px;
+        
+    }
+
+    h2{
+        margin-bottom: 10px;
+    }
 }
 
 #image-col{
     justify-content: center;
     align-items: center;
+
+    h2{
+        font-size: calc(24px + 3vw);
+    }
+}
+
+#basic-col{
+    
 }
 
 #back-button{

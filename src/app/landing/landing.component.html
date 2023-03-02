@@ -1,11 +1,14 @@
 
-<div class="wrapper">
-<h2>Welcome</h2>
-<p>This is my poke thing This is my poke thing This is my poke thing This is my poke thing</p>
-
-
-    <button [disabled]="pokemonLoaded" class="button" (click)="goList()">
-    Proceed
-    </button>
-
-</div>
+<mat-card>
+    <mat-card-title>
+        <h2>Welcome</h2>
+    </mat-card-title>
+    <mat-card-content>
+        <span>This is my poke thing This is my poke thing This is my poke thing This is my poke thing</span>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button [disabled]="pokemonLoaded" (click)="goList()">
+            Proceed
+        </button>
+    </mat-card-actions>
+</mat-card>

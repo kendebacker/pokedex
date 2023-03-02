@@ -1,14 +1,14 @@
-<div class="header">
+<mat-toolbar color="primary" class="header">
     <a routerLink="/filter">
         <button class="filterButton">
             <span>Filter</span>
         </button>
     </a>
     <button (click)="changeImage()" class="filterButton">
-        <span>Display {{imageOption ? "Main" : "Alt"}} Images</span>
+        <span>Display</span>
     </button>
     <div class="detailButton">
-        <span><strong>Generations:</strong>&nbsp;</span><span>{{this.ActiveGenerations}}</span>
+        <span><strong>Gen:</strong>&nbsp;</span><span>{{this.ActiveGenerations}}</span>
     </div>
     <div class="detailButton-img">
         <span><strong>Types: </strong></span><span><img class="el-icon" *ngFor="let type of this.ActiveTypes" src={{type}}></span>
@@ -16,7 +16,7 @@
     <div class="detailButton">
         <span><strong>Sorting:&nbsp;</strong></span><span>{{this.sorting}}</span>
     </div>
-</div>
+</mat-toolbar>
 <div class="main">
     <app-pokebasic [imageOption] = "this.imageOption" [pokeData] ="poke" *ngFor="let poke of this.pokeList"></app-pokebasic>
 </div>

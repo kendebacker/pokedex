@@ -1,24 +1,24 @@
 
-<div class="wrapper-pokemon">
-    <div class="innerWrapper-pokemon">
-        <div class="top-row">
-            <h2 class="pokeTitle">{{pokeData.name}}</h2>
-            <div class="button-link">
-                <a [routerLink]="['/details',pokeData.id]" [state]="{ id:5}">View</a>
-            </div>
+<mat-card class="innerWrapper-pokemon">
+    <mat-card-title>
+        <h2 class="pokeTitle">{{pokeData.name}}</h2>
+    </mat-card-title>
+    <mat-card-content class="bottom-row">
+        <img class="poke-basic-img" [src]="this.imageOption ? pokeData.imageMain : pokeData.imageAlt">
+        <div class="basic-wrapper1">
+            <ol>
+                <li>ID: {{pokeData.id}}</li>
+                <li>Type: {{pokeData.element}}</li>
+                <li>Generation: {{pokeData.generation}}</li>
+                <li>HP: {{pokeData.hp}}</li>
+                <li>Weight: {{pokeData.weight}}</li>
+            </ol>
         </div>
-        <div class="bottom-row">
-            <img class="poke-basic-img" [src]="this.imageOption ? pokeData.imageMain : pokeData.imageAlt">
-            <div class="basic-wrapper1">
-                <ul>
-                    <li>ID: {{pokeData.id}}</li>
-                    <li>Type: {{pokeData.element}}</li>
-                    <li>Generation: {{pokeData.generation}}</li>
-                    <li>HP: {{pokeData.hp}}</li>
-                    <li>Weight: {{pokeData.weight}}</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button >
+            <a [routerLink]="['/details',pokeData.id]" [state]="{ id:5}">View</a>
+        </button>
+    </mat-card-actions>
+</mat-card>
 
