@@ -25,6 +25,8 @@ export class PokelistComponent implements OnInit {
   ActiveTypes!: string[]
   ActiveGenerations!: string
 
+  imageOption: boolean = true
+
   ngOnInit(){
     const elements = this.getElements.getElements()
     this.pokeList = this.getPokemon.getPokemonBasic()
@@ -32,13 +34,18 @@ export class PokelistComponent implements OnInit {
     const elFilter = this.filter.getElementSettings()
     const genFilter = this.filter.getGenerationSettings()
     this.ActiveTypes = this.elements.filter(el => elFilter[el]).map(el => elements[el])
-    this.ActiveGenerations = this.generations.filter(gen => genFilter[gen]).map((el,ind) => {
-      if(ind === this.generations.length-1){
+    const genTemp = this.generations.filter(gen => genFilter[gen])
+    this.ActiveGenerations= genTemp.map((el,ind) => {
+      if(ind === genTemp.length-1){
         return `${el}`
       }else{
         return `${el}, `
       }
     }).join("")
+  }
+
+  changeImage():void{
+    this.imageOption = !this.imageOption
   }
 
 }

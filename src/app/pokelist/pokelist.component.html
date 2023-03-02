@@ -4,6 +4,9 @@
             <span>Filter</span>
         </button>
     </a>
+    <button (click)="changeImage()" class="filterButton">
+        <span>Display {{imageOption ? "Main" : "Alt"}} Images</span>
+    </button>
     <div class="detailButton">
         <span><strong>Generations:</strong>&nbsp;</span><span>{{this.ActiveGenerations}}</span>
     </div>
@@ -15,7 +18,7 @@
     </div>
 </div>
 <div class="main">
-    <app-pokebasic [pokeData] ="poke" *ngFor="let poke of this.pokeList"></app-pokebasic>
+    <app-pokebasic [imageOption] = "this.imageOption" [pokeData] ="poke" *ngFor="let poke of this.pokeList"></app-pokebasic>
 </div>
 
 

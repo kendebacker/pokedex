@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="bottom-row">
-            <img class="poke-basic-img" src={{pokeData.imageMain}}>
+            <img class="poke-basic-img" [src]="this.imageOption ? pokeData.imageMain : pokeData.imageAlt">
             <div class="basic-wrapper1">
                 <ul>
                     <li>ID: {{pokeData.id}}</li>

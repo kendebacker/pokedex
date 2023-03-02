@@ -22,7 +22,7 @@ ngAfterViewInit(): void {
 }
 
 goList():void{
-  this.router.navigateByUrl("list")
+  this.router.navigateByUrl("pokelist")
 }
 
 }

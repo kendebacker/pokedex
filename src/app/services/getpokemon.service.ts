@@ -20,7 +20,7 @@ export class GetpokemonService {
   init():void{
     for(let x = 1; x < 15; x++){
       this.http.get<jsonData>(`https://pokeapi.co/api/v2/pokemon/${x}`).subscribe((data)=>{
-        this.pokeList.push({name: data.name, id: x, hp: data.stats[0].base_stat, element: this.capitalizeFirst(data.types[0].type.name),
+        this.pokeList.push({name: this.capitalizeFirst(data.name), id: x, hp: data.stats[0].base_stat, element: this.capitalizeFirst(data.types[0].type.name),
            weight: data.weight, imageMain: data.sprites.other.home.front_default, imageAlt: data.sprites.other["official-artwork"].front_default, generation: generationFind(x) })
       })
     }
