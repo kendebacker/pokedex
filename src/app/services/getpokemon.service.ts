@@ -11,18 +11,19 @@ import { generationFind } from './generationFind';
 })
 export class GetpokemonService {
 
-  constructor( private http : HttpClient, private filterService: FilterService) {}
+  constructor( private http : HttpClient, private filterService: FilterService) {
+
+  }
 
   pokeList: PokemonBasic[] = []
 
-  init():boolean{
+  init():void{
     for(let x = 1; x < 15; x++){
       this.http.get<jsonData>(`https://pokeapi.co/api/v2/pokemon/${x}`).subscribe((data)=>{
-        this.pokeList.push({name: data.name, id: x, hp: data.stats[0].base_stat, element: data.types[0].type.name,
+        this.pokeList.push({name: data.name, id: x, hp: data.stats[0].base_stat, element: this.capitalizeFirst(data.types[0].type.name),
            weight: data.weight, imageMain: data.sprites.other.home.front_default, imageAlt: data.sprites.other["official-artwork"].front_default, generation: generationFind(x) })
       })
     }
-    return true
   }
 
   getPokemonBasic():PokemonBasic[]{
@@ -30,5 +31,9 @@ export class GetpokemonService {
     const elementSettings = this.filterService.getElementSettings()
     return this.filterService.sortPokemon(this.pokeList.filter(poke => elementSettings[poke.element])
     .filter(poke => generationSettings[poke.generation]))
+  }
+
+  capitalizeFirst(string:string):string {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 }

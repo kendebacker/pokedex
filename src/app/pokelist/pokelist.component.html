@@ -1,21 +1,21 @@
 <div class="header">
     <a routerLink="/filter">
-        <div class="filterButton">
-            Filter
-        </div>
+        <button class="filterButton">
+            <span>Filter</span>
+        </button>
     </a>
     <div class="detailButton">
-        Generation
+        <span><strong>Generations:</strong>&nbsp;</span><span>{{this.ActiveGenerations}}</span>
+    </div>
+    <div class="detailButton-img">
+        <span><strong>Types: </strong></span><span><img class="el-icon" *ngFor="let type of this.ActiveTypes" src={{type}}></span>
     </div>
     <div class="detailButton">
-        Types
-    </div>
-    <div class="detailButton">
-        Sorting
+        <span><strong>Sorting:&nbsp;</strong></span><span>{{this.sorting}}</span>
     </div>
 </div>
 <div class="main">
-    <app-pokebasic [pokeData] ="poke" *ngFor="let poke of this.getPokemon.getPokemonBasic()"></app-pokebasic>
+    <app-pokebasic [pokeData] ="poke" *ngFor="let poke of this.pokeList"></app-pokebasic>
 </div>
 
 
