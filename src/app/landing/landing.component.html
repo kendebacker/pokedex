@@ -3,9 +3,9 @@
 <h2>Welcome</h2>
 <p>This is my poke thing This is my poke thing This is my poke thing This is my poke thing</p>
 
-<a routerLink="/pokelist">
-    <div class="button" >
+
+    <button [disabled]="pokemonLoaded" class="button" (click)="goList()">
     Proceed
-    </div>
-</a>
+    </button>
+
 </div>
