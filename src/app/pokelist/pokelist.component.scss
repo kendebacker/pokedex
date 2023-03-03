@@ -3,6 +3,8 @@ body{
     padding: 0;
 }
 
+
+
 app-pokelist{
     margin: 0;
     padding: 0;
@@ -50,14 +52,14 @@ app-pokelist{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding-bottom: 20px;
+    padding-bottom: 2vw;
 }
 
 app-pokebasic{
 
     display: inline-block;
-    width: 31vw;
-    margin-top: 1.333vw;
+    width: 30.66vw;
+    margin-top: 2vw;
 
 
 }

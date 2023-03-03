@@ -16,7 +16,7 @@ export class FilterComponent implements OnInit{
 
     constructor(public filterService: FilterService, private location: Location, private getElements: GetelementsService){}
     generations: number[] = [1,2,3,4,5,6,7,8,9]
-    elements: string[] = ["Normal", "Fighting", "Flying","Poison", "Ground",  "Rock", "Bug", "Ghost", "Steel", "Fire", "Water", "Grass", "Psychic", "Electric", "Ice", "Dragon", "Dark", "Fairy"]
+    elements: string[] = ["Normal", "Fighting", "Flying","Poison", "Fire",  "Rock", "Bug", "Ghost", "Steel", "Ground", "Electric", "Dragon", "Psychic", "Water", "Ice", "Grass", "Dark", "Fairy"]
     sortSettings: string[] = ["ID", "Generation","Weight", "HP","Element", "Name"]
     generationFilter : GenerationFilter = this.filterService.getGenerationSettings()
     elementFilter : ElementFilter = this.filterService.getElementSettings()

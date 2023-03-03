@@ -10,6 +10,7 @@ export class PokebasicComponent{
 
 @Input() pokeData!: PokemonBasic; 
 @Input() imageOption!:boolean;
+@Input() index!:number;
 @Output() selectPokemon = new EventEmitter<number>()
 
 

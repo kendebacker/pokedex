@@ -3,20 +3,13 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: #f6f6f6;
 }
 
-.header{
-    padding: 0px 20px 0px 20px;
-    display: flex;
-    justify-content: start;
-}
 
 .main-div{
     min-height: 100vh;
-    display: grid;
-    grid-template-rows: 2fr 8fr;
-    padding: 0% .5% .5% .5%;
-    box-sizing: border-box;
+    margin: 2vw 2vw 0 2vw;
 }
 
 app-filter{
@@ -24,47 +17,40 @@ app-filter{
     padding: 0;
 }
 
-.row-1{
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-rows: 2fr 3fr;
+mat-card{
+    justify-content: start;
+    align-items: start;
+    align-content: start;
 }
 
 .gen_button_row{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
 }
 
 .gen-button{
-    margin: 5px;
-    height: 92% !important;
-    flex: 1;
+    width: 80%;
+    height: 100% !important;
     display: flex;
     align-items: center;
     justify-content: center;
 
     span{
-        font-size: calc(2.5vw + 12px);
+        padding: 1vw 0 1vw 0;
+        font-size: calc(.75vw + 12px);
     }
+
 }
 
 .row-2{
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    column-gap: 2%;
+    grid-template-columns: 3fr .75fr;
+    column-gap: 2vw;
+    margin-top: 2vw;
 }
 
-.type-column{
-    display: grid;
-    grid-template-rows: 2fr 3fr 3fr 3fr 3fr;
-}
-
-.other-column{
-    display: grid;
-    grid-template-rows: 3fr 1fr;
-}
 
 .sorting-type{
     display: grid;
@@ -75,22 +61,13 @@ app-filter{
     display: flex;
     align-items: center;
     justify-content: center;
-
-    h2{
-        margin: 5px;
-        font-size: calc(2.5vw + 12px);
-    }
 }
 
-.type_button_row-a{
+.type_button_row{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.type_button_row-b{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
 
 .type-button{
     width: 95%;
@@ -105,11 +82,11 @@ app-filter{
         flex-direction: column;
         align-items: center ;
         justify-content: center ;
-
+        padding: 1vw 0 1vw 0;
     }
 
     span{
-        font-size: calc(1.5vw + 12px);
+        font-size: calc(.75vw + 12px);
         margin: 0;
         padding: 0;
     }
@@ -124,42 +101,30 @@ app-filter{
 
 .button-row-sort{
     width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
 
-    button{
-        width: 90%;
-        font-size: calc(1vw + 12px);
-        padding: 15px 0px 15px 0px;
+.button-sort{
+    width: 90%;
+    height: 100% !important;
+    font-size: calc(1vw + 12px);
+    margin: 5px;
+
+    span{
+        padding: 1vw 0px 1vw 0px;
+        font-size: calc(.75vw + 12px);
     }
 }
 
-.return-area{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-
-}
-
-.return-button{
+mat-card-content{
     width: 100%;
-    height: fill;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-sizing: border-box;
 
-    button{
-        width: 80%;
-        font-size: calc(2vw + 12px);
-    }
 }
 
-.standard{
-    background-color: blue;
+mat-card-header{
+    justify-content: start;
 }
 
-.extra{
-    background-color: yellow;
-}

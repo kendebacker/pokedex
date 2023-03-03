@@ -1,6 +1,9 @@
-app-pokedetails{
+
+
+.main{
     display: grid;
-    grid-template-columns: 2fr 1fr .75fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    background-color: #f6f6f6;
 }
 
 .column{
@@ -30,8 +33,13 @@ app-pokedetails{
     }
 }
 
-#basic-col{
-    
+mat-card{
+    width: 90%;
+}
+
+.moves-content{
+    overflow: scroll;
+    max-height: 90vh;
 }
 
 #back-button{

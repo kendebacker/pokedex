@@ -14,7 +14,7 @@ import { GetelementsService } from '../services/getelements.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class PokelistComponent implements OnInit {
-  constructor(public getPokemon: GetpokemonService, private filter: FilterService, public getElements: GetelementsService){
+  constructor(public getPokemon: GetpokemonService, public filter: FilterService, public getElements: GetelementsService){
   }
 
   generations: number[] = [1,2,3,4,5,6,7,8,9]
@@ -24,8 +24,6 @@ export class PokelistComponent implements OnInit {
   sorting!: string
   ActiveTypes!: string[]
   ActiveGenerations!: string
-
-  imageOption: boolean = true
 
   ngOnInit(){
     const elements = this.getElements.getElements()
@@ -45,7 +43,15 @@ export class PokelistComponent implements OnInit {
   }
 
   changeImage():void{
-    this.imageOption = !this.imageOption
+    this.filter.changeImage()
+  }
+
+  public handlePage(e: any) {
+    console.log(e)
+  }
+
+  test(event:any){
+    console.log(event)
   }
 
 }

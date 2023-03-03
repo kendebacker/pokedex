@@ -89,4 +89,14 @@ export class FilterService {
     }
   }
 
+  imageOption: boolean = false
+
+  changeImage():void{
+    this.imageOption = !this.imageOption
+  }
+
+  getImageOption():boolean{
+    return this.imageOption
+  }
+
 }
