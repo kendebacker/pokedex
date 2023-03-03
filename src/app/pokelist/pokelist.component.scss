@@ -1,6 +1,3 @@
-
-
-
 body{
     margin: 0;
     padding: 0;
@@ -14,6 +11,7 @@ app-pokelist{
     align-items: center;
     flex-direction: column;
     flex: 1;
+    background-color: #f6f6f6;
     min-height: 100vh;
     width: 100vw;
 }
@@ -37,17 +35,6 @@ app-pokelist{
     align-items: center;
     justify-content: center;
     margin-left: 20px;
-    font-size: calc(12px + 1vw);
-}
-
-
-.detailButton-img{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 20px;
-    font-size: calc(12px + 1vw);
-    max-width: 70vw;
 }
 
 .detailButton-elements{
@@ -63,13 +50,14 @@ app-pokelist{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    padding-bottom: 20px;
 }
 
 app-pokebasic{
 
     display: inline-block;
-    width: 32vw;
-    margin-top: 1vw;
+    width: 31vw;
+    margin-top: 1.333vw;
 
 
 }
@@ -79,5 +67,9 @@ app-pokebasic{
     margin-left: 2px;
     height: 2.25vw;
     aspect-ratio: 1/1;
+}
+
+mat-button-toggle-group{
+    margin-left: 20px;
 }
 

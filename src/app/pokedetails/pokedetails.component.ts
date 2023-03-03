@@ -8,7 +8,7 @@ import { ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'app-pokedetails',
   templateUrl: './pokedetails.component.html',
-  styleUrls: ['./pokedetails.component.scss'],
+  styleUrls: ['./pokedetails.component.scss','../app.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class PokedetailsComponent implements OnInit{

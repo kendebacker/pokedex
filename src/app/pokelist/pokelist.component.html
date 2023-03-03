@@ -1,20 +1,21 @@
 <mat-toolbar color="primary" class="header">
     <a routerLink="/filter">
-        <button class="filterButton">
-            <span>Filter</span>
+        <button mat-fab extended="true" >
+            Filter
         </button>
     </a>
-    <button (click)="changeImage()" class="filterButton">
-        <span>Display</span>
-    </button>
+    <mat-button-toggle-group (change)="changeImage()" name="imgStyle" aria-label="Image Style">
+        <mat-button-toggle  color="accent" checked value="bold">New</mat-button-toggle>
+        <mat-button-toggle value="italic">Classic</mat-button-toggle>
+      </mat-button-toggle-group>
     <div class="detailButton">
-        <span><strong>Gen:</strong>&nbsp;</span><span>{{this.ActiveGenerations}}</span>
-    </div>
-    <div class="detailButton-img">
-        <span><strong>Types: </strong></span><span><img class="el-icon" *ngFor="let type of this.ActiveTypes" src={{type}}></span>
+        <span>Gen:&nbsp;</span><span>{{this.ActiveGenerations}}</span>
     </div>
     <div class="detailButton">
-        <span><strong>Sorting:&nbsp;</strong></span><span>{{this.sorting}}</span>
+        <span>Types: </span><span><img class="el-icon" *ngFor="let type of this.ActiveTypes" src={{type}}></span>
+    </div>
+    <div class="detailButton">
+        <span>Sorting:&nbsp;</span><span>{{this.sorting}}</span>
     </div>
 </mat-toolbar>
 <div class="main">

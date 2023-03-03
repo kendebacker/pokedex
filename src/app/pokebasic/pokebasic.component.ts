@@ -4,7 +4,7 @@ import { PokemonBasic } from '../interfaces/interfaces';
 @Component({
   selector: 'app-pokebasic',
   templateUrl: './pokebasic.component.html',
-  styleUrls: ['./pokebasic.component.scss']
+  styleUrls: ['./pokebasic.component.scss','../app.component.scss']
 })
 export class PokebasicComponent{
 

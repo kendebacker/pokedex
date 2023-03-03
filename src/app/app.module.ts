@@ -14,6 +14,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button'; 
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 
 
 
@@ -36,7 +39,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatCardModule,
     MatButtonModule,
     MatListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSlideToggleModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

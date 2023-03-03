@@ -1,13 +1,15 @@
 
 <mat-card>
-    <mat-card-title>
-        <h2>Welcome</h2>
-    </mat-card-title>
+    <mat-card-header>
+        <mat-card-title>
+            <h2>Ken's Pokedex</h2>
+        </mat-card-title>
+    </mat-card-header>
     <mat-card-content>
-        <span>This is my poke thing This is my poke thing This is my poke thing This is my poke thing</span>
+        <span>I built this as a way to both gain familiarity with the Angular framework, as well as explore the Angular Material library.</span>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-raised-button [disabled]="pokemonLoaded" (click)="goList()">
+        <button class="load-button" mat-raised-button color="primary" [disabled]="pokemonLoaded" (click)="goList()">
             Proceed
         </button>
     </mat-card-actions>
