@@ -3,8 +3,12 @@
 </mat-toolbar>
 <div class="main">
     <div class="column" id="image-col">
-        <img src={{data.images[0]}} alt="">
         <h2>{{data.name}}</h2>
+        <img [src]="this.imageOption ? data.images[0] : data.images[1]">
+        <mat-button-toggle-group (change)="changeImage()" name="imgStyle" aria-label="Image Style">
+            <mat-button-toggle value="italic" [checked] = "!this.imageOption">Classic</mat-button-toggle>
+            <mat-button-toggle  color="accent" [checked] = "this.imageOption" value="bold">Modern</mat-button-toggle>
+        </mat-button-toggle-group>
     </div>
     <div class="column" id="basic-col">
         <mat-card>
@@ -47,20 +51,8 @@
                 </mat-list>
             </mat-card-content>
         </mat-card>
-        <mat-card>
-            <mat-card-header>
-                <mat-card-title>
-                    Statistics
-                </mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <mat-list>
-                    <mat-list-item *ngFor="let stat of data.stats">
-                        {{stat.name}}: <strong>{{stat.stat}}</strong>
-                    </mat-list-item>
-                </mat-list>
-            </mat-card-content>
-        </mat-card>
+    </div>
+    <div class="column" id="basic-col">
         <mat-card>
             <mat-card-header>
                 <mat-card-title>
@@ -71,6 +63,20 @@
                 <mat-list>
                     <mat-list-item *ngFor="let abil of data.abilities">
                         {{abil}}
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    Statistics
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item *ngFor="let stat of data.stats">
+                        {{stat.name}}: <strong>{{stat.stat}}</strong>
                     </mat-list-item>
                 </mat-list>
             </mat-card-content>

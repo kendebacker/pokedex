@@ -4,6 +4,7 @@ import { GenerationFilter, ElementFilter,elementObject } from '../interfaces/int
 import { GetelementsService } from '../services/getelements.service';
 import { Location } from '@angular/common';
 import { ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filter',
@@ -14,7 +15,11 @@ import { ViewEncapsulation } from '@angular/core';
 
 export class FilterComponent implements OnInit{
 
-    constructor(public filterService: FilterService, private location: Location, private getElements: GetelementsService){}
+    constructor(public filterService: FilterService, private location: Location, private getElements: GetelementsService, private router: Router){
+      if(!router.navigated){
+        router.navigateByUrl("")
+      }
+    }
     generations: number[] = [1,2,3,4,5,6,7,8,9]
     elements: string[] = ["Normal", "Fighting", "Flying","Poison", "Fire",  "Rock", "Bug", "Ghost", "Steel", "Ground", "Electric", "Dragon", "Psychic", "Water", "Ice", "Grass", "Dark", "Fairy"]
     sortSettings: string[] = ["ID", "Generation","Weight", "HP","Element", "Name"]

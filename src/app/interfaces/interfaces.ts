@@ -2,6 +2,13 @@ interface GenerationFilter{
   [key: number]: boolean
 }
 
+interface PageEvent{
+  length: number,
+  pageIndex: number
+  pageSize: number,
+  previousPageIndex: number
+}
+
 interface ElementFilter {
   [key: string]: boolean
 }
@@ -98,4 +105,4 @@ interface elementObject {
   [normal: string]: string
 }
 
-export {GenerationFilter, ElementFilter, PokemonBasic, jsonData, routeData, jsonDataDetailed, pokemonDetailed, elementObject}
+export {GenerationFilter, ElementFilter, PokemonBasic, jsonData, routeData, jsonDataDetailed, pokemonDetailed, elementObject, PageEvent}

@@ -7,7 +7,7 @@
     <mat-button-toggle-group (change)="changeImage()" name="imgStyle" aria-label="Image Style">
         <mat-button-toggle value="italic" [checked] = "!this.filter.getImageOption()">Classic</mat-button-toggle>
         <mat-button-toggle  color="accent" [checked] = "this.filter.getImageOption()" value="bold">Modern</mat-button-toggle>
-      </mat-button-toggle-group>
+    </mat-button-toggle-group>
     <div class="detailButton">
         <span>Gen:&nbsp;</span><span>{{this.ActiveGenerations}}</span>
     </div>
@@ -21,11 +21,11 @@
 <div class="main">
     <app-pokebasic [index] ="i" [imageOption] = "this.filter.getImageOption()" [pokeData] ="poke" *ngFor="let poke of this.pokeList; let i = index"></app-pokebasic>
 </div>
-<mat-paginator [length]="this.pokeList.length"
-[pageSize]="15"
+<mat-paginator [length]="this.getPokemon.getPokemonBasic().length"
+[pageSize]="this.getPokemon.getPageSize()"
 [pageSizeOptions]="[15, 60, 150, 300]"
 aria-label="Select page"
-(page)="handlePage($event)">
+(page)="updatePage($event)">
 </mat-paginator>
 
 

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { pokemonDetailed, jsonDataDetailed } from '../interfaces/interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Location } from '@angular/common';
 import { ViewEncapsulation } from '@angular/core';
+import { FilterService } from '../services/filter.service';
 
 @Component({
   selector: 'app-pokedetails',
@@ -14,11 +15,17 @@ import { ViewEncapsulation } from '@angular/core';
 export class PokedetailsComponent implements OnInit{
 
   constructor(private route: ActivatedRoute, private http: HttpClient,
-    private location: Location){}
+    private location: Location, private filter: FilterService, private router: Router){
+      if(!router.navigated){
+      router.navigateByUrl("")
+      }
+    }
 
   data!:pokemonDetailed;
+  imageOption!: boolean;
   
   ngOnInit(){
+    this.imageOption = this.filter.getImageOption()
     const id = this.route.snapshot.paramMap.get("id")
     this.http.get<jsonDataDetailed>(`https://pokeapi.co/api/v2/pokemon/${id}`)
     .subscribe((data)=>  {
@@ -44,6 +51,10 @@ export class PokedetailsComponent implements OnInit{
 
   cap(string:string):string {
     return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  changeImage():void{
+    this.imageOption = !this.imageOption
   }
 
 }

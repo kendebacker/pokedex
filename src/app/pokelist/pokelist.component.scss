@@ -18,6 +18,12 @@ app-pokelist{
     width: 100vw;
 }
 
+mat-paginator{
+    background-color: #f6f6f6 !important;
+    padding-bottom: 2vw;
+
+}
+
 .header{
     display: flex;
     flex-direction: row;

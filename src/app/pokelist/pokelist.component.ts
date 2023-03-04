@@ -5,7 +5,7 @@ import { PokemonBasic, ElementFilter, GenerationFilter, elementObject } from '..
 import { ViewEncapsulation } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { GetelementsService } from '../services/getelements.service';
-
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-pokelist',
@@ -14,7 +14,10 @@ import { GetelementsService } from '../services/getelements.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class PokelistComponent implements OnInit {
-  constructor(public getPokemon: GetpokemonService, public filter: FilterService, public getElements: GetelementsService){
+  constructor(public getPokemon: GetpokemonService, public filter: FilterService, public getElements: GetelementsService, private router: Router){
+    if(!router.navigated){
+      router.navigateByUrl("")
+    }
   }
 
   generations: number[] = [1,2,3,4,5,6,7,8,9]
@@ -24,10 +27,12 @@ export class PokelistComponent implements OnInit {
   sorting!: string
   ActiveTypes!: string[]
   ActiveGenerations!: string
+  pageEvent!: PageEvent;
 
   ngOnInit(){
     const elements = this.getElements.getElements()
-    this.pokeList = this.getPokemon.getPokemonBasic()
+    const tempList = this.getPokemon.getPokemonBasic()
+    this.pokeList = tempList.slice(0, Math.min(tempList.length, this.getPokemon.getPageSize()))
     this.sorting = this.filter.getSortSetting()
     const elFilter = this.filter.getElementSettings()
     const genFilter = this.filter.getGenerationSettings()
@@ -40,18 +45,17 @@ export class PokelistComponent implements OnInit {
         return `${el}, `
       }
     }).join("")
+
   }
 
   changeImage():void{
     this.filter.changeImage()
   }
 
-  public handlePage(e: any) {
-    console.log(e)
-  }
-
-  test(event:any){
-    console.log(event)
+  updatePage(event:PageEvent){
+    this.getPokemon.updatePageSize(event['pageSize'])
+    const tempList = this.getPokemon.getPokemonBasic()
+    this.pokeList = tempList.slice(event['pageIndex']*event['pageSize'], Math.min(event['pageIndex']*event['pageSize'] + event['pageSize']))
   }
 
 }

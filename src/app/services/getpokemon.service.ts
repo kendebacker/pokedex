@@ -16,6 +16,15 @@ export class GetpokemonService {
   }
 
   pokeList: PokemonBasic[] = []
+  pageSize: number = 15
+
+  getPageSize():number{
+    return this.pageSize
+  }
+
+  updatePageSize(newSize:number){
+    this.pageSize = newSize
+  }
 
   init():void{
     for(let x = 1; x < 40; x++){
