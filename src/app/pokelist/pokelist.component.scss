@@ -3,7 +3,10 @@ body{
     padding: 0;
 }
 
-
+.icon-list{
+    display: flex;
+    align-items: center;
+}
 
 app-pokelist{
     margin: 0;
