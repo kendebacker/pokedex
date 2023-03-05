@@ -1,16 +1,18 @@
-
-<mat-card>
-    <mat-card-header>
-        <mat-card-title>
-            <h2>Ken's Pokedex</h2>
-        </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <span>I built this as a way to both gain familiarity with the Angular framework, as well as explore the Angular Material library.</span>
-    </mat-card-content>
-    <mat-card-actions>
-        <button class="load-button" mat-raised-button color="primary" [disabled]="pokemonLoaded" (click)="goList()">
-            Proceed
-        </button>
-    </mat-card-actions>
-</mat-card>
+<div class="wrapper">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <h1>Ken's Pokedex</h1>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>I built this as a way to both gain familiarity with the Angular framework and explore the Angular Material library. 
+                Images and information in this application are gotten from https://pokeapi.co/ and https://bulbapedia.bulbagarden.net/.</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="load-button" mat-raised-button color="primary" [disabled]="pokemonLoaded" (click)="goList()">
+                Proceed
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
