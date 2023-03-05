@@ -3,14 +3,12 @@ import { FilterService } from '../services/filter.service';
 import { GenerationFilter, ElementFilter,elementObject } from '../interfaces/interfaces';
 import { GetelementsService } from '../services/getelements.service';
 import { Location } from '@angular/common';
-import { ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss','../app.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 
 export class FilterComponent implements OnInit{

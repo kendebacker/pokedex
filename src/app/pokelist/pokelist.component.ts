@@ -2,7 +2,6 @@ import { Component , OnInit} from '@angular/core';
 import { GetpokemonService } from '../services/getpokemon.service';
 import { FilterService } from '../services/filter.service';
 import { PokemonBasic, ElementFilter, GenerationFilter, elementObject } from '../interfaces/interfaces';
-import { ViewEncapsulation } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { GetelementsService } from '../services/getelements.service';
 import { PageEvent } from '@angular/material/paginator';
@@ -11,7 +10,6 @@ import { PageEvent } from '@angular/material/paginator';
   selector: 'app-pokelist',
   templateUrl: './pokelist.component.html',
   styleUrls: ['./pokelist.component.scss','../app.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class PokelistComponent implements OnInit {
   constructor(public getPokemon: GetpokemonService, public filter: FilterService, public getElements: GetelementsService, private router: Router){

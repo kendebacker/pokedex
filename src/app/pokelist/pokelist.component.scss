@@ -84,3 +84,15 @@ mat-button-toggle-group{
     margin-left: 20px;
 }
 
+.page-row{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thinner-letters{
+    font:400 20px/32px Roboto, sans-serif ;
+}

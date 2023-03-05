@@ -1,32 +1,35 @@
 <mat-toolbar color="primary" class="header">
     <a routerLink="/filter">
         <button mat-fab extended="true" >
-            Filter
+            <h2>Filter</h2>
         </button>
     </a>
     <mat-button-toggle-group (change)="changeImage()" name="imgStyle" aria-label="Image Style">
-        <mat-button-toggle value="italic" [checked] = "!this.filter.getImageOption()">Classic</mat-button-toggle>
-        <mat-button-toggle  color="accent" [checked] = "this.filter.getImageOption()" value="bold">Modern</mat-button-toggle>
+        <mat-button-toggle [checked] = "!this.filter.getImageOption()">Classic</mat-button-toggle>
+        <mat-button-toggle [checked] = "this.filter.getImageOption()">Modern</mat-button-toggle>
     </mat-button-toggle-group>
     <div class="detailButton">
-        <span>Gen:&nbsp;</span><span>{{this.ActiveGenerations}}</span>
+        <span class="thinner-letters">Gen:&nbsp;</span><span class="thinner-letters">{{this.ActiveGenerations}}</span>
     </div>
     <div class="detailButton">
-        <span>Types: </span><span class="icon-list"><img class="el-icon" *ngFor="let type of this.ActiveTypes" src={{type}}></span>
+        <span class="thinner-letters">Types:&nbsp;</span><span class="icon-list"><img class="el-icon" *ngFor="let type of this.ActiveTypes" src={{type}}></span>
     </div>
     <div class="detailButton">
-        <span>Sorting:&nbsp;</span><span>{{this.sorting}}</span>
+        <span class="thinner-letters">Sorting:&nbsp;</span><span class="thinner-letters">{{this.sorting}}</span>
     </div>
 </mat-toolbar>
 <div class="main">
     <app-pokebasic [index] ="i" [imageOption] = "this.filter.getImageOption()" [pokeData] ="poke" *ngFor="let poke of this.pokeList; let i = index"></app-pokebasic>
 </div>
-<mat-paginator [length]="this.getPokemon.getPokemonBasic().length"
-[pageSize]="this.getPokemon.getPageSize()"
-[pageSizeOptions]="[15, 60, 150, 300]"
-aria-label="Select page"
-(page)="updatePage($event)">
-</mat-paginator>
+<div class="page-row">
+    <mat-paginator [length]="this.getPokemon.getPokemonBasic().length"
+    [pageSize]="this.getPokemon.getPageSize()"
+    [pageSizeOptions]="[15, 60, 150, 300]"
+    aria-label="Select page"
+    (page)="updatePage($event)">
+    </mat-paginator>
+</div>
+
 
 
 

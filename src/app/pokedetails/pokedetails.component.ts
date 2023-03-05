@@ -3,14 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { pokemonDetailed, jsonDataDetailed } from '../interfaces/interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Location } from '@angular/common';
-import { ViewEncapsulation } from '@angular/core';
 import { FilterService } from '../services/filter.service';
 
 @Component({
   selector: 'app-pokedetails',
   templateUrl: './pokedetails.component.html',
   styleUrls: ['./pokedetails.component.scss','../app.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class PokedetailsComponent implements OnInit{
 
