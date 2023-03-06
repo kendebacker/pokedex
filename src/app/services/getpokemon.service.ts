@@ -17,6 +17,7 @@ export class GetpokemonService {
 
   pokeList: PokemonBasic[] = []
   pageSize: number = 15
+  pokeLoaded: boolean = false
 
   getPageSize():number{
     return this.pageSize
@@ -26,8 +27,13 @@ export class GetpokemonService {
     this.pageSize = newSize
   }
 
+  pokeListComplete():boolean{
+    // # pokemon = 1008
+    return this.pokeList.length === 9
+  }
+  // 1 -> 1009
   init():void{
-    for(let x = 1; x < 40; x++){
+    for(let x = 1000; x < 1009; x++){
       this.http.get<jsonData>(`https://pokeapi.co/api/v2/pokemon/${x}`).subscribe((data)=>{
         this.pokeList.push({name: this.capitalizeFirst(data.name), id: x, hp: data.stats[0].base_stat, element: this.capitalizeFirst(data.types[0].type.name),
            weight: data.weight, imageMain: data.sprites.other.home.front_default, imageAlt: data.sprites.other["official-artwork"].front_default, generation: generationFind(x) })

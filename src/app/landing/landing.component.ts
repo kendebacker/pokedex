@@ -10,13 +10,14 @@ import { Router } from '@angular/router';
 
 export class LandingComponent implements AfterViewInit{
 
-constructor( private pokeService:GetpokemonService, private router: Router){}
+constructor( public pokeService:GetpokemonService, private router: Router){
+  this.pokemonLoaded = pokeService.pokeLoaded
+}
 
-pokemonLoaded: boolean = true
+pokemonLoaded: boolean = false
 
-ngAfterViewInit(): void {
+ngAfterViewInit():void{
   this.pokeService.init()
-  this.pokemonLoaded = false
 }
 
 goList():void{

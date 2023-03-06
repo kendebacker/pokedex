@@ -10,7 +10,7 @@
                 Images and information in this application are gotten from https://pokeapi.co/ and https://bulbapedia.bulbagarden.net/.</p>
         </mat-card-content>
         <mat-card-actions>
-            <button class="load-button" mat-raised-button color="primary" [disabled]="pokemonLoaded" (click)="goList()">
+            <button class="load-button" mat-raised-button color="primary" [disabled]="!this.pokeService.pokeListComplete()" (click)="goList()">
                 Proceed
             </button>
         </mat-card-actions>
