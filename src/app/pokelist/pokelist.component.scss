@@ -96,7 +96,7 @@ mat-button-toggle-group{
 .thinner-letters{
     font-family: var(--mdc-list-list-item-label-text-font);
     line-height: var(--mdc-list-list-item-label-text-line-height);
-    font-size: var(--mdc-list-list-item-label-text-size);
+    font-size: var(--mdc-typography-button-font-size, 20px);
     font-weight: 400;
     letter-spacing: var(--mdc-list-list-item-label-text-tracking);
 }
