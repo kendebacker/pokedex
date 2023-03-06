@@ -1,4 +1,7 @@
 <div class="wrapper">
+    <img class="landing-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/481px-Pok%C3%A9_Ball_icon.svg.png">
+    <span *ngIf="!this.pokeService.pokeListComplete()" class="title">Loading Data...</span>
+    <span *ngIf="this.pokeService.pokeListComplete()" class="title">Ready!</span>
     <mat-card>
         <mat-card-header>
             <mat-card-title>
@@ -6,12 +9,12 @@
             </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <p>I built this as a way to both gain familiarity with the Angular framework and explore the Angular Material library. 
-                Images and information in this application are gotten from https://pokeapi.co/ and https://bulbapedia.bulbagarden.net/.</p>
+            <p>I built this as a way to gain familiarity with Angular and explore the Angular Material library. 
+                All of the Images and information in this application are from https://pokeapi.co/, https://bulbapedia.bulbagarden.net/, and https://en.wikipedia.org/.</p>
         </mat-card-content>
         <mat-card-actions>
             <button class="load-button" mat-raised-button color="primary" [disabled]="!this.pokeService.pokeListComplete()" (click)="goList()">
-                Proceed
+                Continue
             </button>
         </mat-card-actions>
     </mat-card>
