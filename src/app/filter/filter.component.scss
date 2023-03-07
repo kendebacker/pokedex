@@ -12,7 +12,7 @@ app-filter{
 }
 
 mat-card{
-    justify-content: start;
+    justify-content: flex-start;
     align-items: start;
     align-content: start;
 }
@@ -119,6 +119,6 @@ mat-card-content{
 }
 
 mat-card-header{
-    justify-content: start;
+    justify-content: flex-start;
 }
 
