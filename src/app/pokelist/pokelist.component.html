@@ -4,14 +4,14 @@
             Filter
         </button>
     </a>
-    <mat-button-toggle-group (change)="changeImage()" name="imgStyle" aria-label="Image Style">
+    <mat-button-toggle-group class="toggle-button" (change)="changeImage()" name="imgStyle" aria-label="Image Style">
         <mat-button-toggle class="button-label" [checked] = "!this.filter.getImageOption()">Classic</mat-button-toggle>
         <mat-button-toggle class="button-label" [checked] = "this.filter.getImageOption()">Modern</mat-button-toggle>
     </mat-button-toggle-group>
     <div class="detailButton">
         <span class="thinner-letters">Gen:&nbsp;</span><span class="thinner-letters">{{this.ActiveGenerations}}</span>
     </div>
-    <div class="detailButton">
+    <div id="icon-list" class="detailButton">
         <span class="thinner-letters">Types:&nbsp;</span><span class="icon-list"><img class="el-icon" *ngFor="let type of this.ActiveTypes" src={{type}}></span>
     </div>
     <div class="detailButton">

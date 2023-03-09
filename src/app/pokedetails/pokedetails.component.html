@@ -5,7 +5,7 @@
     <div class="detail-main">
         <div class="detail-column" id="image-col">
             <span class="title">{{data.name}}</span>
-            <img [src]="this.imageOption ? data.images[0] : data.images[1]">
+            <img class="img-main" [src]="this.imageOption ? data.images[0] : data.images[1]">
             <mat-button-toggle-group (change)="changeImage()" name="imgStyle" aria-label="Image Style">
                 <mat-button-toggle value="italic" [checked] = "!this.imageOption">Classic</mat-button-toggle>
                 <mat-button-toggle  color="accent" [checked] = "this.imageOption" value="bold">Modern</mat-button-toggle>
