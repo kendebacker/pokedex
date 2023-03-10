@@ -14,6 +14,10 @@ mat-button-toggle-group {
   align-items: center;
   margin-top: 5vw;
   margin-bottom: 4vw;
+
+  :last-child{
+    margin-bottom: 4vw;
+  }
 }
 mat-toolbar {
   z-index: 10;
@@ -31,10 +35,6 @@ mat-toolbar {
 
   h2 {
     margin-bottom: 10px;
-  }
-
-  :last-child{
-    margin-bottom: 4vw;
   }
 }
 
@@ -99,6 +99,10 @@ mat-card {
     justify-content: center;
     align-items: center;
     margin-bottom: 0;
+
+    :last-child{
+        margin-bottom: 0vw;
+      }
   }
   mat-toolbar {
     z-index: 10;
@@ -119,9 +123,6 @@ mat-card {
       margin-bottom: 10px;
     }
 
-    :last-child{
-        margin-bottom: 0vw;
-      }
   }
 
   #image-col {
