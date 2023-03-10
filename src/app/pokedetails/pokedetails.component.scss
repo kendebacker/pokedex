@@ -32,6 +32,10 @@ mat-toolbar {
   h2 {
     margin-bottom: 10px;
   }
+
+  :last-child{
+    margin-bottom: 4vw;
+  }
 }
 
 #image-col {
@@ -114,6 +118,10 @@ mat-card {
     h2 {
       margin-bottom: 10px;
     }
+
+    :last-child{
+        margin-bottom: 0vw;
+      }
   }
 
   #image-col {
