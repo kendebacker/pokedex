@@ -1,78 +1,106 @@
-<mat-toolbar color="primary" >
-    <button mat-fab extended="true" (click) ="goBack()">Back</button>
+<mat-toolbar color="primary">
+  <button mat-fab extended="true" (click)="goBack()">Back</button>
 </mat-toolbar>
 <div class="main-div">
-    <mat-card>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h1>Generations</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="gen_button_row">
+        <button
+          mat-raised-button
+          class="gen-button"
+          [color]="generationFilter[gen] ? 'primary' : 'basic'"
+          *ngFor="let gen of generations"
+          (click)="updateGeneration(gen)"
+        >
+          <span class="inner-button">
+            <span>{{ gen }}</span>
+            <img />
+          </span>
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <div class="row-2">
+    <div class="type-column">
+      <mat-card>
         <mat-card-header>
-            <mat-card-title>
-                <h1>Generations</h1>
-            </mat-card-title>
+          <mat-card-title>
+            <h1>Element Type</h1>
+          </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <div class="gen_button_row">
-                <button mat-raised-button class="gen-button"  [color]="generationFilter[gen] ? 'primary' : 'basic'" *ngFor="let gen of generations" (click)="updateGeneration(gen)"> 
-                    <span class="inner-button">
-                        <span>{{gen}}</span>
-                        <img  >
-                    </span>
-                </button>
-            </div>
+          <div class="type_button_row">
+            <button
+              mat-raised-button
+              class="type-button"
+              [color]="elementFilter[el] ? 'primary' : 'basic'"
+              *ngFor="let el of elements.slice(0, 6)"
+              (click)="updateElement(el)"
+            >
+              <span class="inner-button">
+                <span>{{ el }}</span>
+                <img src="{{ elementMap[el] }}" />
+              </span>
+            </button>
+          </div>
+          <div class="type_button_row">
+            <button
+              mat-raised-button
+              class="type-button"
+              [color]="elementFilter[el] ? 'primary' : 'basic'"
+              *ngFor="let el of elements.slice(6, 12)"
+              (click)="updateElement(el)"
+            >
+              <span class="inner-button">
+                <span>{{ el }}</span>
+                <img src="{{ elementMap[el] }}" />
+              </span>
+            </button>
+          </div>
+          <div class="type_button_row">
+            <button
+              mat-raised-button
+              class="type-button"
+              [color]="elementFilter[el] ? 'primary' : 'basic'"
+              *ngFor="let el of elements.slice(12, 18)"
+              (click)="updateElement(el)"
+            >
+              <span class="inner-button">
+                <span>{{ el }}</span>
+                <img src="{{ elementMap[el] }}" />
+              </span>
+            </button>
+          </div>
         </mat-card-content>
-    </mat-card>
-    <div class="row-2">
-        <div class="type-column">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>
-                        <h1>Element Type</h1>
-                    </mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <div class="type_button_row">
-                        <button mat-raised-button class="type-button" [color]="elementFilter[el] ? 'primary' : 'basic'"  *ngFor="let el of elements.slice(0,6)" (click)="updateElement(el)">
-                            <span class="inner-button">
-                                <span>{{el}}</span>
-                                <img src={{elementMap[el]}} >
-                            </span>
-                        </button>
-                    </div>
-                    <div class="type_button_row">
-                        <button mat-raised-button class="type-button" [color]="elementFilter[el] ? 'primary' : 'basic'"  *ngFor="let el of elements.slice(6,12)" (click)="updateElement(el)">
-                            <span class="inner-button">
-                                <span>{{el}}</span>
-                                <img src={{elementMap[el]}} >
-                            </span>
-                        </button>
-                    </div>
-                    <div class="type_button_row">
-                        <button mat-raised-button class="type-button" [color]="elementFilter[el] ? 'primary' : 'basic'"   *ngFor="let el of elements.slice(12,18)" (click)="updateElement(el)">
-                            <span class="inner-button">
-                                <span>{{el}}</span>
-                                <img src={{elementMap[el]}} >
-                            </span>
-                        </button>
-                    </div>
-                </mat-card-content>
-            </mat-card>
-        </div>
-        <div class="other-column">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>
-                        <h1>Sorting Type</h1>
-                    </mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <div *ngFor="let sort of sortSettings" class="button-row-sort">
-                        <button mat-raised-button class="button-sort"  [color]="sortSetting === sort ? 'primary' : 'basic'"  (click)="updateSort(sort)">
-                            <span>
-                                {{sort}}
-                            </span>
-                        </button>
-                    </div>
-                </mat-card-content>
-            </mat-card>
-        </div>
+      </mat-card>
     </div>
+    <div class="other-column">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <h1>Sorting Type</h1>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div *ngFor="let sort of sortSettings" class="button-row-sort">
+            <button
+              mat-raised-button
+              class="button-sort"
+              [color]="sortSetting === sort ? 'primary' : 'basic'"
+              (click)="updateSort(sort)"
+            >
+              <span>
+                {{ sort }}
+              </span>
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
 </div>
-

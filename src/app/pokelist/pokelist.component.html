@@ -1,35 +1,57 @@
 <mat-toolbar color="primary" class="header">
-    <a routerLink="/filter">
-        <button mat-fab extended="true" >
-            Filter
-        </button>
-    </a>
-    <mat-button-toggle-group class="toggle-button" (change)="changeImage()" name="imgStyle" aria-label="Image Style">
-        <mat-button-toggle class="button-label" [checked] = "!this.filter.getImageOption()">Classic</mat-button-toggle>
-        <mat-button-toggle class="button-label" [checked] = "this.filter.getImageOption()">Modern</mat-button-toggle>
-    </mat-button-toggle-group>
-    <div class="detailButton">
-        <span class="thinner-letters">Gen:&nbsp;</span><span class="thinner-letters">{{this.ActiveGenerations}}</span>
-    </div>
-    <div id="icon-list" class="detailButton">
-        <span class="thinner-letters">Types:&nbsp;</span><span class="icon-list"><img class="el-icon" *ngFor="let type of this.ActiveTypes" src={{type}}></span>
-    </div>
-    <div class="detailButton">
-        <span class="thinner-letters">Sorting:&nbsp;</span><span class="thinner-letters">{{this.sorting}}</span>
-    </div>
+  <a routerLink="/filter">
+    <button mat-fab extended="true">Filter</button>
+  </a>
+  <mat-button-toggle-group
+    class="toggle-button"
+    (change)="changeImage()"
+    name="imgStyle"
+    aria-label="Image Style"
+  >
+    <mat-button-toggle
+      class="button-label"
+      [checked]="!this.filter.getImageOption()"
+      >Classic</mat-button-toggle
+    >
+    <mat-button-toggle
+      class="button-label"
+      [checked]="this.filter.getImageOption()"
+      >Modern</mat-button-toggle
+    >
+  </mat-button-toggle-group>
+  <div class="detailButton">
+    <span class="thinner-letters">Gen:&nbsp;</span
+    ><span class="thinner-letters">{{ this.ActiveGenerations }}</span>
+  </div>
+  <div id="icon-list" class="detailButton">
+    <span class="thinner-letters">Types:&nbsp;</span
+    ><span class="icon-list"
+      ><img
+        class="el-icon"
+        *ngFor="let type of this.ActiveTypes"
+        src="{{ type }}"
+    /></span>
+  </div>
+  <div class="detailButton">
+    <span class="thinner-letters">Sorting:&nbsp;</span
+    ><span class="thinner-letters">{{ this.sorting }}</span>
+  </div>
 </mat-toolbar>
 <div class="main">
-    <app-pokebasic [index] ="i" [imageOption] = "this.filter.getImageOption()" [pokeData] ="poke" *ngFor="let poke of this.pokeList; let i = index"></app-pokebasic>
+  <app-pokebasic
+    [index]="i"
+    [imageOption]="this.filter.getImageOption()"
+    [pokeData]="poke"
+    *ngFor="let poke of this.pokeList; let i = index"
+  ></app-pokebasic>
 </div>
 <div class="page-row">
-    <mat-paginator [length]="this.getPokemon.getPokemonBasic().length"
+  <mat-paginator
+    [length]="this.getPokemon.getPokemonBasic().length"
     [pageSize]="this.getPokemon.getPageSize()"
     [pageSizeOptions]="[15, 60, 120, 180]"
     aria-label="Select page"
-    (page)="updatePage($event)">
-    </mat-paginator>
+    (page)="updatePage($event)"
+  >
+  </mat-paginator>
 </div>
-
-
-
-
