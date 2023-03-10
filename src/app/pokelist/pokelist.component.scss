@@ -3,6 +3,7 @@ body {
   padding: 0;
 }
 
+
 .icon-list {
   display: flex;
   align-items: center;
@@ -33,7 +34,15 @@ app-pokelist {
 mat-paginator {
   background-color: #f6f6f6 !important;
   padding-bottom: 4vw;
+  display: flex;
+  justify-content: center;
 }
+
+
+:host ::ng-deep.mat-mdc-paginator-container{
+    justify-content: center;
+  }
+
 
 .header {
   display: flex;
