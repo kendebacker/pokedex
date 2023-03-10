@@ -32,7 +32,7 @@ app-pokelist {
 
 mat-paginator {
   background-color: #f6f6f6 !important;
-  padding-bottom: 2vw;
+  padding-bottom: 4vw;
 }
 
 .header {
@@ -69,13 +69,13 @@ mat-paginator {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding-bottom: 2vw;
+  padding-bottom: 4vw;
 }
 
 app-pokebasic {
   display: inline-block;
-  width: 96vw;
-  margin-top: 2vw;
+  width: 92vw;
+  margin-top: 4vw;
 }
 
 .el-icon {
@@ -123,6 +123,11 @@ mat-button-toggle-group {
 }
 
 @media (min-width: 700px) {
+mat-paginator {
+    background-color: #f6f6f6 !important;
+    padding-bottom: 2vw;
+    }
+
   app-pokebasic {
     display: inline-block;
     width: 47vw;
