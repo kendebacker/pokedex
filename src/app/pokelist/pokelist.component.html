@@ -49,6 +49,7 @@
   <mat-paginator
     [length]="this.getPokemon.getPokemonBasic().length"
     [pageSize]="this.getPokemon.getPageSize()"
+    [pageIndex]="this.getPokemon.getPageIndex()"
     [pageSizeOptions]="[15, 60, 120, 180]"
     aria-label="Select page"
     (page)="updatePage($event)"
