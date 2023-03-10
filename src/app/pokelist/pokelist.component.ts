@@ -52,6 +52,7 @@ export class PokelistComponent implements OnInit {
   ActiveTypes!: string[];
   ActiveGenerations!: string;
   pageEvent!: PageEvent;
+  
 
   ngOnInit() {
     const elements = this.getElements.getElements();
