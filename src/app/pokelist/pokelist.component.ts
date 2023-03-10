@@ -57,8 +57,8 @@ export class PokelistComponent implements OnInit {
     const elements = this.getElements.getElements();
     const tempList = this.getPokemon.getPokemonBasic();
     this.pokeList = tempList.slice(
-      0,
-      Math.min(tempList.length, this.getPokemon.getPageSize())
+      this.getPokemon.getPageIndex() * this.getPokemon.getPageSize(),
+      Math.min(tempList.length, this.getPokemon.getPageIndex() * this.getPokemon.getPageSize() + this.getPokemon.getPageSize())
     );
     this.sorting = this.filter.getSortSetting();
     const elFilter = this.filter.getElementSettings();
@@ -84,6 +84,7 @@ export class PokelistComponent implements OnInit {
 
   updatePage(event: PageEvent) {
     this.getPokemon.updatePageSize(event['pageSize']);
+    this.getPokemon.updatePageIndex(event['pageIndex']);
     const tempList = this.getPokemon.getPokemonBasic();
     this.pokeList = tempList.slice(
       event['pageIndex'] * event['pageSize'],

@@ -12,6 +12,7 @@ export class GetpokemonService {
 
   pokeList: PokemonBasic[] = [];
   pageSize = 15;
+  pageIndex = 0;
   pokeLoaded = false;
 
   getPageSize(): number {
@@ -20,6 +21,14 @@ export class GetpokemonService {
 
   updatePageSize(newSize: number) {
     this.pageSize = newSize;
+  }
+
+  updatePageIndex(newIndex: number) {
+    this.pageIndex = newIndex;
+  }
+
+  getPageIndex():number {
+    return this.pageIndex;
   }
 
   pokeListComplete(): boolean {
