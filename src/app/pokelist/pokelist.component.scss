@@ -3,7 +3,6 @@ body {
   padding: 0;
 }
 
-
 .icon-list {
   display: flex;
   align-items: center;
@@ -38,11 +37,9 @@ mat-paginator {
   justify-content: center;
 }
 
-
-:host ::ng-deep.mat-mdc-paginator-container{
-    justify-content: center;
-  }
-
+:host ::ng-deep.mat-mdc-paginator-container {
+  justify-content: center;
+}
 
 .header {
   display: flex;
@@ -132,10 +129,10 @@ mat-button-toggle-group {
 }
 
 @media (min-width: 700px) {
-mat-paginator {
+  mat-paginator {
     background-color: #f6f6f6 !important;
     padding-bottom: 2vw;
-    }
+  }
 
   app-pokebasic {
     display: inline-block;

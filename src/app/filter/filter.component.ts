@@ -57,7 +57,7 @@ export class FilterComponent implements OnInit {
   generationFilter: GenerationFilter =
     this.filterService.getGenerationSettings();
   elementFilter: ElementFilter = this.filterService.getElementSettings();
-  sortSetting = 'ID';
+  sortSetting = this.filterService.getSortSetting();
   elementMap!: elementObject;
 
   ngOnInit() {

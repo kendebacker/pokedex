@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetpokemonService } from '../services/getpokemon.service';
 import { FilterService } from '../services/filter.service';
-import {
-  PokemonBasic,
-} from '../interfaces/interfaces';
+import { PokemonBasic } from '../interfaces/interfaces';
 import { Router } from '@angular/router';
 import { GetelementsService } from '../services/getelements.service';
 import { PageEvent } from '@angular/material/paginator';
@@ -52,14 +50,17 @@ export class PokelistComponent implements OnInit {
   ActiveTypes!: string[];
   ActiveGenerations!: string;
   pageEvent!: PageEvent;
-  
 
   ngOnInit() {
     const elements = this.getElements.getElements();
     const tempList = this.getPokemon.getPokemonBasic();
     this.pokeList = tempList.slice(
       this.getPokemon.getPageIndex() * this.getPokemon.getPageSize(),
-      Math.min(tempList.length, this.getPokemon.getPageIndex() * this.getPokemon.getPageSize() + this.getPokemon.getPageSize())
+      Math.min(
+        tempList.length,
+        this.getPokemon.getPageIndex() * this.getPokemon.getPageSize() +
+          this.getPokemon.getPageSize()
+      )
     );
     this.sorting = this.filter.getSortSetting();
     const elFilter = this.filter.getElementSettings();

@@ -27,7 +27,7 @@ export class GetpokemonService {
     this.pageIndex = newIndex;
   }
 
-  getPageIndex():number {
+  getPageIndex(): number {
     return this.pageIndex;
   }
 

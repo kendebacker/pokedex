@@ -87,6 +87,7 @@ mat-card {
     height: 7vh;
     aspect-ratio: 1/1;
     margin-top: 0px;
+    margin-bottom: 2vw;
   }
 }
 
@@ -142,9 +143,10 @@ mat-card-header {
     }
 
     img {
-      height: 7vh;
+      height: 9vh;
       aspect-ratio: 1/1;
       margin-top: 10px;
+      margin-bottom: .5vw;
     }
   }
 

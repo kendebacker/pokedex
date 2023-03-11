@@ -1,4 +1,4 @@
-import { Injectable, ValueProvider } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { GenerationFilter, ElementFilter } from '../interfaces/interfaces';
 import { PokemonBasic } from '../interfaces/interfaces';
 
@@ -6,9 +6,7 @@ import { PokemonBasic } from '../interfaces/interfaces';
   providedIn: 'root',
 })
 export class FilterService {
-  constructor() {}
-
-  sortSetting: string = 'ID';
+  sortSetting = 'ID';
 
   generationFilter: GenerationFilter = {
     1: true,
@@ -98,7 +96,7 @@ export class FilterService {
     }
   }
 
-  imageOption: boolean = false;
+  imageOption = false;
 
   changeImage(): void {
     this.imageOption = !this.imageOption;
