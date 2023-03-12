@@ -6,6 +6,7 @@ import {
   elementObject,
 } from '../interfaces/interfaces';
 import { GetelementsService } from '../services/getelements.service';
+import { GetpokemonService } from '../services/getpokemon.service';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -19,6 +20,7 @@ export class FilterComponent implements OnInit {
     public filterService: FilterService,
     private location: Location,
     private getElements: GetelementsService,
+    private getPokemonService: GetpokemonService,
     private router: Router
   ) {
     if (!router.navigated) {
@@ -66,14 +68,17 @@ export class FilterComponent implements OnInit {
 
   updateGeneration(num: number): void {
     this.generationFilter = this.filterService.updateGeneration(num);
+    this.getPokemonService.updatePageIndex(0);
   }
 
   updateElement(el: string): void {
     this.elementFilter = this.filterService.updateElement(el);
+    this.getPokemonService.updatePageIndex(0);
   }
 
   updateSort(el: string): void {
     this.sortSetting = this.filterService.updateSortSetting(el);
+    this.getPokemonService.updatePageIndex(0);
   }
 
   goBack(): void {

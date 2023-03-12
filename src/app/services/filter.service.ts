@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { GenerationFilter, ElementFilter } from '../interfaces/interfaces';
 import { PokemonBasic } from '../interfaces/interfaces';
+import { GetpokemonService } from './getpokemon.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FilterService {
+
   sortSetting = 'ID';
 
   generationFilter: GenerationFilter = {
