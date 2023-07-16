@@ -21,7 +21,7 @@ export class FilterComponent implements OnInit {
     private location: Location,
     private getElements: GetelementsService,
     private getPokemonService: GetpokemonService,
-    private router: Router
+    private router: Router,
   ) {
     if (!router.navigated) {
       router.navigateByUrl('');

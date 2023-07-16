@@ -7,7 +7,6 @@ import { GetpokemonService } from './getpokemon.service';
   providedIn: 'root',
 })
 export class FilterService {
-
   sortSetting = 'ID';
 
   generationFilter: GenerationFilter = {
@@ -85,7 +84,7 @@ export class FilterService {
           ? -1
           : a.element.toLowerCase() > b.element.toLowerCase()
           ? 1
-          : 0
+          : 0,
       );
     } else {
       return list.sort((a, b) =>
@@ -93,7 +92,7 @@ export class FilterService {
           ? -1
           : a.name.toLowerCase() > b.name.toLowerCase()
           ? 1
-          : 0
+          : 0,
       );
     }
   }

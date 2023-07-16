@@ -16,7 +16,7 @@ export class PokedetailsComponent implements OnInit {
     private http: HttpClient,
     private location: Location,
     private filter: FilterService,
-    private router: Router
+    private router: Router,
   ) {
     if (!router.navigated) {
       router.navigateByUrl('');

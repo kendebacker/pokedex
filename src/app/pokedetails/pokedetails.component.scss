@@ -62,7 +62,9 @@ mat-card {
 }
 
 .title {
-  font: 300 24px/32px Roboto, sans-serif;
+  font:
+    300 24px/32px Roboto,
+    sans-serif;
   letter-spacing: normal;
   margin: 25px 0 0 16px;
   display: block;
@@ -150,7 +152,9 @@ mat-card {
   }
 
   .title {
-    font: 300 24px/32px Roboto, sans-serif;
+    font:
+      300 24px/32px Roboto,
+      sans-serif;
     letter-spacing: normal;
     margin: 0 0 16px;
     display: block;

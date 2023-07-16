@@ -8,7 +8,10 @@ import { generationFind } from './generationFind';
   providedIn: 'root',
 })
 export class GetpokemonService {
-  constructor(private http: HttpClient, private filterService: FilterService) {}
+  constructor(
+    private http: HttpClient,
+    private filterService: FilterService,
+  ) {}
 
   pokeList: PokemonBasic[] = [];
   pageSize = 15;
@@ -61,7 +64,7 @@ export class GetpokemonService {
     return this.filterService.sortPokemon(
       this.pokeList
         .filter((poke) => elementSettings[poke.element])
-        .filter((poke) => generationSettings[poke.generation])
+        .filter((poke) => generationSettings[poke.generation]),
     );
   }
 

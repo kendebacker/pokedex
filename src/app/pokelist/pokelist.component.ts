@@ -16,7 +16,7 @@ export class PokelistComponent implements OnInit {
     public getPokemon: GetpokemonService,
     public filter: FilterService,
     public getElements: GetelementsService,
-    private router: Router
+    private router: Router,
   ) {
     if (!router.navigated) {
       router.navigateByUrl('');
@@ -59,8 +59,8 @@ export class PokelistComponent implements OnInit {
       Math.min(
         tempList.length,
         this.getPokemon.getPageIndex() * this.getPokemon.getPageSize() +
-          this.getPokemon.getPageSize()
-      )
+          this.getPokemon.getPageSize(),
+      ),
     );
     this.sorting = this.filter.getSortSetting();
     const elFilter = this.filter.getElementSettings();
@@ -90,7 +90,7 @@ export class PokelistComponent implements OnInit {
     const tempList = this.getPokemon.getPokemonBasic();
     this.pokeList = tempList.slice(
       event['pageIndex'] * event['pageSize'],
-      Math.min(event['pageIndex'] * event['pageSize'] + event['pageSize'])
+      Math.min(event['pageIndex'] * event['pageSize'] + event['pageSize']),
     );
   }
 }

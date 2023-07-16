@@ -33,14 +33,14 @@ interface jsonData {
   stats: [
     {
       base_stat: number;
-    }
+    },
   ];
   types: [
     {
       type: {
         name: string;
       };
-    }
+    },
   ];
   weight: number;
   sprites: {
@@ -69,7 +69,7 @@ interface jsonDataDetailed {
     {
       slot: number;
       type: { name: string };
-    }
+    },
   ];
   sprites: {
     other: {

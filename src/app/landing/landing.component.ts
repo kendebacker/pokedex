@@ -8,7 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./landing.component.scss', '../app.component.scss'],
 })
 export class LandingComponent implements AfterViewInit {
-  constructor(public pokeService: GetpokemonService, private router: Router) {
+  constructor(
+    public pokeService: GetpokemonService,
+    private router: Router,
+  ) {
     this.pokemonLoaded = pokeService.pokeLoaded;
   }
 
